@@ -1,0 +1,70 @@
+@import 'bourbon/bourbon'; 
+
+	.box {
+		width: 100px;
+		height: 100px;
+		background-color: blue;
+		transform: skew(60deg); 
+	}
+
+	.box2 {
+		width: 150px;
+		height: 150px;
+		background-color: purple;
+		/*when you want to do two transforms, put them under the same transform ans separate them by a space */
+		@include transform(translate(100px, 100px) rotate(-30deg));
+		// transition: background-color 3s,  width 2s, padding 1s;
+		animation: myAnimation 5s linear infinite; 
+		-webkit-animation: myAnimation 5s alternate linear infinite; 
+		// transition: width 2s; 
+		// transition: padding 1s; 
+	}
+
+
+	.box2:hover {
+      	background-color: yellow; 
+      	width: 200px; 
+      	padding: 10px; 
+
+	}
+
+	.box3 {
+		@extend .box2; 
+		background-color: blue; 
+		/*does this do it in response to the previous square?*/
+		@include transform(translate(300px, -300px) rotate(30deg)); 
+	}
+
+	
+	.box4 {
+		@extend .box2; 
+		background-color: red; 
+		@include transform(translate(500px, -800px) rotate(-30deg)); 
+	}
+
+	@-webkit-keyframes myAnimation{
+		0% {margin-left: 0px; margin-top: 0px;}
+
+		25% {margin-left: 50px; margin-top: 50px;}
+
+		50% {margin-left: 100px; margin-top: 20px;}
+
+		100% {margin-left: 200px; margin-top: 70px; }
+	}
+
+/*HIS IS THE SAME AS ABOVE, IT IS JUST FOR BROSWER COMPTABILITY*/ 
+	@keyframes myAnimation{
+		0% {margin-left: 0px; margin-top: 0px;}
+
+		25% {margin-left: 50px; margin-top: 50px;}
+
+		50% {margin-left: 50px; margin-top: 20px;}
+
+		100% {margin-left: 200px; margin-top: 70px; }
+	}
+
+
+
+	//for loop to keep making boxes. 
+
+	// @include transform(rotateX(30deg) scale(3)); 

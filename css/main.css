@@ -1,0 +1,70 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transform: skew(60deg); }
+
+.box2, .box3, .box4 {
+  width: 150px;
+  height: 150px;
+  background-color: purple;
+  /*when you want to do two transforms, put them under the same transform ans separate them by a space */
+  -webkit-transform: translate(100px, 100px) rotate(-30deg);
+  -moz-transform: translate(100px, 100px) rotate(-30deg);
+  -ms-transform: translate(100px, 100px) rotate(-30deg);
+  -o-transform: translate(100px, 100px) rotate(-30deg);
+  transform: translate(100px, 100px) rotate(-30deg);
+  animation: myAnimation 5s linear infinite;
+  -webkit-animation: myAnimation 5s alternate linear infinite; }
+
+.box2:hover, .box3:hover, .box4:hover {
+  background-color: yellow;
+  width: 200px;
+  padding: 10px; }
+
+.box3 {
+  background-color: blue;
+  /*does this do it in response to the previous square?*/
+  -webkit-transform: translate(300px, -300px) rotate(30deg);
+  -moz-transform: translate(300px, -300px) rotate(30deg);
+  -ms-transform: translate(300px, -300px) rotate(30deg);
+  -o-transform: translate(300px, -300px) rotate(30deg);
+  transform: translate(300px, -300px) rotate(30deg); }
+
+.box4 {
+  background-color: red;
+  -webkit-transform: translate(500px, -800px) rotate(-30deg);
+  -moz-transform: translate(500px, -800px) rotate(-30deg);
+  -ms-transform: translate(500px, -800px) rotate(-30deg);
+  -o-transform: translate(500px, -800px) rotate(-30deg);
+  transform: translate(500px, -800px) rotate(-30deg); }
+
+@-webkit-keyframes myAnimation {
+  0% {
+    margin-left: 0px;
+    margin-top: 0px; }
+  25% {
+    margin-left: 50px;
+    margin-top: 50px; }
+  50% {
+    margin-left: 100px;
+    margin-top: 20px; }
+  100% {
+    margin-left: 200px;
+    margin-top: 70px; } }
+/*HIS IS THE SAME AS ABOVE, IT IS JUST FOR BROSWER COMPTABILITY*/
+@keyframes myAnimation {
+  0% {
+    margin-left: 0px;
+    margin-top: 0px; }
+  25% {
+    margin-left: 50px;
+    margin-top: 50px; }
+  50% {
+    margin-left: 50px;
+    margin-top: 20px; }
+  100% {
+    margin-left: 200px;
+    margin-top: 70px; } }
+
+/*# sourceMappingURL=main.css.map */
